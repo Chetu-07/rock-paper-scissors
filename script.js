@@ -21,9 +21,27 @@ let humanScore = 0;
 let computerScore =0;
 let draw = 0;
 
-if (getHumanChoice === computerChoice){
-    draw += 1;
-    console.log ("it\'s a draw")
-    console.log (`You : ${getHumanChoice} , Computer : ${computerChoice}, Draws : ${draw}`);
+function gameRound(){
+    if (getHumanChoice === computerChoice){
+        draw += 1;
+        console.log ("it\'s a draw")
+        console.log (`You : ${getHumanChoice} , Computer : ${computerChoice}, Draws : ${draw}`);
+    }
+    else if (getHumanChoice=== "rock" && computerChoice ==="scissors"
+        || getHumanChoice=== "paper" && computerChoice ==="rock "
+        || getHumanChoice=== "scissors" && computerChoice ==="rock"){
+            humanScore += 1;
+            console.log ("You won");
+            console.log (`You : ${getHumanChoice} , Computer : ${computerChoice}, Draws : ${draw}`);
+        }
+    else {
+        humanScore += 1;
+            console.log ("You loose");
+            console.log (`You : ${getHumanChoice} , Computer : ${computerChoice}, Draws : ${draw}`);
+    
+    }
 }
 
+function playRound(){
+    
+}
