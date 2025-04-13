@@ -1,4 +1,5 @@
-let computerChoice
+let computerChoice;
+let getHumanChoice;
 
 function getComputerChoice(){
     let randomNo = Math.random();
@@ -11,37 +12,42 @@ function getComputerChoice(){
     else {
         computerChoice = "scissors";
     }
+    console.log (`computer choose ${computerChoice}`);
     return computerChoice;
 }
 
-let getHumanChoice = prompt("Rock,Paper or Scissors");
-getHumanChoice = getHumanChoice.toLowerCase();
 
-let humanScore = 0;
-let computerScore =0;
-let draw = 0;
 
-function gameRound(){
+let gameRound = function gameRound(){
+    getHumanChoice = prompt("Rock,Paper or Scissors");
+    getHumanChoice = getHumanChoice.toLowerCase();
+
+    let humanScore = 0;
+    let computerScore = 0;
+    let draw = 0;
     if (getHumanChoice === computerChoice){
         draw += 1;
         console.log ("it\'s a draw")
-        console.log (`You : ${getHumanChoice} , Computer : ${computerChoice}, Draws : ${draw}`);
+        console.log (`You : ${humanScore} , Computer :computerScore, Draws : ${draw}`);
     }
     else if (getHumanChoice=== "rock" && computerChoice ==="scissors"
         || getHumanChoice=== "paper" && computerChoice ==="rock "
         || getHumanChoice=== "scissors" && computerChoice ==="rock"){
             humanScore += 1;
             console.log ("You won");
-            console.log (`You : ${getHumanChoice} , Computer : ${computerChoice}, Draws : ${draw}`);
+            console.log (`You : ${humanScore} , Computer :computerScore, Draws : ${draw}`);
         }
     else {
         humanScore += 1;
             console.log ("You loose");
-            console.log (`You : ${getHumanChoice} , Computer : ${computerChoice}, Draws : ${draw}`);
+            computerScore += 1;
+            console.log (`You : ${humanScore} , Computer :computerScore, Draws : ${draw}`);
     
     }
 }
 
 function playRound(){
     
+    getComputerChoice();
+    gameRound();
 }
